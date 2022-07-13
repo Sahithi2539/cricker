@@ -1,19 +1,21 @@
+import 'package:cricker/buttons.dart';
+import 'package:cricker/register.dart';
 import 'package:flutter/material.dart';
 
-class MyLogin extends StatefulWidget {
-  const MyLogin({Key? key}) : super(key: key);
+class login extends StatefulWidget {
+  const login({Key? key}) : super(key: key);
 
   @override
-  _MyLoginState createState() => _MyLoginState();
+  _loginState createState() => _loginState();
 }
 
-class _MyLoginState extends State<MyLogin> {
+class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/login.png'), fit: BoxFit.cover),
+            image: AssetImage('assets/register.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -78,7 +80,13 @@ class _MyLoginState extends State<MyLogin> {
                                 backgroundColor: Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => buttons()),
+                                      );
+                                    },
                                     icon: Icon(
                                       Icons.arrow_forward,
                                     )),
@@ -93,7 +101,11 @@ class _MyLoginState extends State<MyLogin> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'register');
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => register()),
+                                  );
                                 },
                                 child: Text(
                                   'Sign Up',
@@ -130,3 +142,4 @@ class _MyLoginState extends State<MyLogin> {
     );
   }
 }
+
