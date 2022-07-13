@@ -1,13 +1,14 @@
+import 'package:cricker/buttons.dart';
 import 'package:flutter/material.dart';
 
-class MyRegister extends StatefulWidget {
-  const MyRegister({Key? key}) : super(key: key);
+class register extends StatefulWidget {
+  const register({Key? key}) : super(key: key);
 
   @override
-  _MyRegisterState createState() => _MyRegisterState();
+  _registerState createState() => _registerState();
 }
 
-class _MyRegisterState extends State<MyRegister> {
+class _registerState extends State<register> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -134,7 +135,13 @@ class _MyRegisterState extends State<MyRegister> {
                                 backgroundColor: Color(0xff4c505b),
                                 child: IconButton(
                                     color: Colors.white,
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => buttons()),
+                                      );
+                                    },
                                     icon: Icon(
                                       Icons.arrow_forward,
                                     )),
@@ -176,3 +183,4 @@ class _MyRegisterState extends State<MyRegister> {
     );
   }
 }
+
