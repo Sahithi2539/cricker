@@ -3,6 +3,8 @@ import 'login.dart';
 import 'register.dart';
 import 'buttons.dart';
 import 'SecondScreen.dart';
+import 'verification.dart';
+import 'camera_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,4 +33,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

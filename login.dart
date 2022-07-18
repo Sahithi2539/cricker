@@ -15,7 +15,7 @@ class _loginState extends State<login> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/register.png'), fit: BoxFit.cover),
+            image: AssetImage('assets/login.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -142,4 +142,3 @@ class _loginState extends State<login> {
     );
   }
 }
-

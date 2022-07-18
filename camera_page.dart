@@ -1,5 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 
 class CameraPage extends StatefulWidget {
   final List<CameraDescription>? cameras;
@@ -58,6 +59,10 @@ class _CameraPageState extends State<CameraPage> {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              primary: Color.fromRGBO(155, 163, 235, 1), // background
+              onPrimary: Colors.black, // foreground
+            ),
             onPressed: () async {
               pictureFile = await controller.takePicture();
               setState(() {});

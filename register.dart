@@ -1,4 +1,5 @@
 import 'package:cricker/buttons.dart';
+import 'package:cricker/login.dart';
 import 'package:flutter/material.dart';
 
 class register extends StatefulWidget {
@@ -14,7 +15,7 @@ class _registerState extends State<register> {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-            image: AssetImage('assets/register.png'), fit: BoxFit.cover),
+            image: AssetImage('assets/login.png'), fit: BoxFit.cover),
       ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
@@ -156,7 +157,11 @@ class _registerState extends State<register> {
                             children: [
                               TextButton(
                                 onPressed: () {
-                                  Navigator.pushNamed(context, 'login');
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => login()),
+                                  );
                                 },
                                 child: Text(
                                   'Sign In',
@@ -183,4 +188,3 @@ class _registerState extends State<register> {
     );
   }
 }
-

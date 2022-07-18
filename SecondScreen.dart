@@ -1,3 +1,4 @@
+import 'package:cricker/verification.dart';
 import 'package:flutter/material.dart';
 
 class SecondScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _SecondScreenState extends State<SecondScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Cricker"),
+          backgroundColor: Color.fromRGBO(100, 111, 212, 1),
           actions: <Widget>[
             IconButton(
                 icon: Icon(Icons.search),
@@ -56,16 +57,20 @@ class _SecondScreenState extends State<SecondScreen> {
               width: 200,
               height: 50,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromRGBO(155, 163, 235, 1), // background
+                  onPrimary: Colors.black, // foreground
+                ),
                 child: Text(
                   'Attendance',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SecondScreen()),
+                    MaterialPageRoute(builder: (context) => verification()),
                   );
                 },
               ),
@@ -77,16 +82,20 @@ class _SecondScreenState extends State<SecondScreen> {
               width: 200,
               height: 50,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromRGBO(155, 163, 235, 1), // background
+                  onPrimary: Colors.black, // foreground
+                ),
                 child: Text(
                   'Checking',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SecondScreen()),
+                    MaterialPageRoute(builder: (context) => verification()),
                   );
                 },
               ),
@@ -98,16 +107,20 @@ class _SecondScreenState extends State<SecondScreen> {
               width: 200,
               height: 50,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromRGBO(155, 163, 235, 1), // background
+                  onPrimary: Colors.black, // foreground
+                ),
                 child: Text(
                   'Daily Target',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
                 ),
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => SecondScreen()),
+                    MaterialPageRoute(builder: (context) => verification()),
                   );
                 },
               ),

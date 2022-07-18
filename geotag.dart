@@ -29,7 +29,7 @@ class _geotag extends State<geotag> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Cricker"),
+        backgroundColor: Color.fromRGBO(100, 111, 212, 1),
         actions: <Widget>[
           IconButton(
               icon: Icon(Icons.search),
@@ -57,9 +57,12 @@ class _geotag extends State<geotag> {
                 fontSize: 30,
               ),
             ),
-            MaterialButton(
+            ElevatedButton(
               onPressed: getlocation,
-              color: Color.fromRGBO(100, 111, 212, 1),
+              style: ElevatedButton.styleFrom(
+                primary: Color.fromRGBO(155, 163, 235, 1), // background
+                onPrimary: Colors.black, // foreground
+              ),
               child: Text(
                 "Get Location",
                 style: TextStyle(
