@@ -9,6 +9,16 @@ class verification extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color.fromRGBO(100, 111, 212, 1),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {
+                //
+              }),
+        ],
+      ),
       body: Center(
         child: Column(
           mainAxisSize: MainAxisSize.min,
@@ -17,6 +27,10 @@ class verification extends StatelessWidget {
               height: 50,
               width: 200,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromRGBO(155, 163, 235, 1), // background
+                  onPrimary: Colors.black, // foreground
+                ),
                 onPressed: () async {
                   await availableCameras().then(
                     (value) => Navigator.push(
@@ -33,9 +47,16 @@ class verification extends StatelessWidget {
               ),
             ),
             SizedBox(
+              height: 16,
+            ),
+            SizedBox(
               height: 50,
               width: 200,
               child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  primary: Color.fromRGBO(155, 163, 235, 1), // background
+                  onPrimary: Colors.black, // foreground
+                ),
                 onPressed: () {
                   Navigator.push(
                     context,
