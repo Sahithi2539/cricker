@@ -10,7 +10,30 @@ class CameraPage extends StatefulWidget {
   _CameraPageState createState() => _CameraPageState();
 }
 
+/*class geotag extends StatefulWidget {
+  @override
+  _geotag createState() => _geotag();
+}*/
+
 class _CameraPageState extends State<CameraPage> {
+  var long = "longitude";
+  var lat = "latitude";
+  void getlocation() async {
+    LocationPermission per = await Geolocator.checkPermission();
+    if (per == LocationPermission.denied ||
+        per == LocationPermission.deniedForever) {
+      print("permission denied");
+      LocationPermission per1 = await Geolocator.requestPermission();
+    } else {
+      Position currentLoc = await Geolocator.getCurrentPosition(
+          desiredAccuracy: LocationAccuracy.best);
+      setState(() {
+        long = currentLoc.longitude.toString();
+        lat = currentLoc.latitude.toString();
+      });
+    }
+  }
+
   late CameraController controller;
   XFile? pictureFile;
 
@@ -56,6 +79,26 @@ class _CameraPageState extends State<CameraPage> {
             ),
           ),
         ),
+        Text(
+          "logitude : " + long,
+          style: TextStyle(
+            color: Color.fromRGBO(100, 111, 212, 1),
+            fontSize: 20,
+          ),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Text(
+          "latitude : " + lat,
+          style: TextStyle(
+            color: Color.fromRGBO(100, 111, 212, 1),
+            fontSize: 20,
+          ),
+        ),
+        SizedBox(
+          height: 5,
+        ),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: ElevatedButton(
@@ -66,6 +109,7 @@ class _CameraPageState extends State<CameraPage> {
             onPressed: () async {
               pictureFile = await controller.takePicture();
               setState(() {});
+              getlocation();
             },
             child: const Text('Capture Image'),
           ),
@@ -75,6 +119,7 @@ class _CameraPageState extends State<CameraPage> {
             pictureFile!.path,
             height: 200,
           )
+
         //Android/iOS
         // Image.file(File(pictureFile!.path)))
       ],
