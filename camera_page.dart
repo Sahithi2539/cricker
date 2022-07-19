@@ -80,7 +80,7 @@ class _CameraPageState extends State<CameraPage> {
           ),
         ),
         Text(
-          "logitude : " + long,
+          "longitude : " + long,
           style: TextStyle(
             color: Color.fromRGBO(100, 111, 212, 1),
             fontSize: 20,
