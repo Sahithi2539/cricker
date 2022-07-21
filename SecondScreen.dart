@@ -1,6 +1,6 @@
-import 'package:cricker/buttons.dart';
 import 'package:cricker/verification.dart';
 import 'package:flutter/material.dart';
+import 'login.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
@@ -21,16 +21,64 @@ class _SecondScreenState extends State<SecondScreen> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Color.fromRGBO(100, 111, 212, 1),
-          actions: <Widget>[
-            IconButton(
-                icon: Icon(Icons.home),
-                onPressed: () {
+          iconTheme: IconThemeData(color: Colors.black),
+        ),
+        drawer: Drawer(
+          child: ListView(
+            padding: const EdgeInsets.all(0),
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(155, 163, 235, 1),
+                ), //BoxDecoration
+                child: UserAccountsDrawerHeader(
+                  decoration:
+                      BoxDecoration(color: Color.fromRGBO(155, 163, 235, 1)),
+                  accountName: Text(
+                    "User",
+                    style: TextStyle(fontSize: 18, color: Colors.black),
+                  ),
+                  accountEmail: Text(
+                    "user@gmail.com",
+                    style: TextStyle(color: Colors.black),
+                  ),
+                  currentAccountPictureSize: Size.square(50),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundColor: Color.fromRGBO(100, 111, 212, 1),
+                    child: Text(
+                      "A",
+                      style: TextStyle(
+                          fontSize: 30.0, color: Color.fromRGBO(0, 0, 0, 1)),
+                    ),
+                  ),
+                ),
+              ),
+              ListTile(
+                leading: const Icon(Icons.person),
+                title: const Text(' My Profile '),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.edit),
+                title: const Text(' Edit Profile '),
+                onTap: () {
+                  Navigator.pop(context);
+                },
+              ),
+              ListTile(
+                leading: const Icon(Icons.logout),
+                title: const Text('LogOut'),
+                onTap: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => buttons()),
+                    MaterialPageRoute(builder: (context) => login()),
                   );
-                }),
-          ],
+                },
+              ),
+            ],
+          ),
         ),
         body: Center(
           child: Column(mainAxisSize: MainAxisSize.min, children: [
