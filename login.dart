@@ -111,18 +111,15 @@ class _loginState extends State<login> {
                                   'Sign Up',
                                   textAlign: TextAlign.left,
                                   style: TextStyle(
-                                      decoration: TextDecoration.underline,
-                                      color: Color(0xff4c505b),
-                                      fontSize: 18),
+                                      color: Color(0xff4c505b), fontSize: 18),
                                 ),
                                 style: ButtonStyle(),
                               ),
                               TextButton(
                                   onPressed: () {},
                                   child: Text(
-                                    'Forgot Password',
+                                    'Forgot Password ?',
                                     style: TextStyle(
-                                      decoration: TextDecoration.underline,
                                       color: Color(0xff4c505b),
                                       fontSize: 18,
                                     ),
