@@ -1,3 +1,4 @@
+import 'package:cricker/buttons.dart';
 import 'package:cricker/verification.dart';
 import 'package:flutter/material.dart';
 
@@ -22,9 +23,12 @@ class _SecondScreenState extends State<SecondScreen> {
           backgroundColor: Color.fromRGBO(100, 111, 212, 1),
           actions: <Widget>[
             IconButton(
-                icon: Icon(Icons.search),
+                icon: Icon(Icons.home),
                 onPressed: () {
-                  //
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => buttons()),
+                  );
                 }),
           ],
         ),
