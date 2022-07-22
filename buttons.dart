@@ -1,5 +1,4 @@
 import 'package:cricker/login.dart';
-import 'package:cricker/user_page.dart';
 import 'package:flutter/material.dart';
 import 'SecondScreen.dart';
 
@@ -10,6 +9,16 @@ class buttons extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(100, 111, 212, 1),
         iconTheme: IconThemeData(color: Colors.black),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => buttons()),
+                );
+              }),
+        ],
       ),
       body: Center(
           child: Column(

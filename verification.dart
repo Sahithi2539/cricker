@@ -2,6 +2,7 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'camera_page.dart';
 import 'login.dart';
+import 'buttons.dart';
 
 class verification extends StatelessWidget {
   const verification({Key? key}) : super(key: key);
@@ -12,6 +13,16 @@ class verification extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Color.fromRGBO(100, 111, 212, 1),
         iconTheme: IconThemeData(color: Colors.black),
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(Icons.home),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => buttons()),
+                );
+              }),
+        ],
       ),
       drawer: Drawer(
         child: ListView(
