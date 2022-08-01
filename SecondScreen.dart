@@ -5,6 +5,7 @@ import 'login.dart';
 import 'buttons.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'image.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
@@ -161,7 +162,7 @@ class _SecondScreenState extends State<SecondScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => verification()),
+                    MaterialPageRoute(builder: (context) => Home()),
                   );
                 },
               ),
