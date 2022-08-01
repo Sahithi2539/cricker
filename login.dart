@@ -1,6 +1,10 @@
 import 'package:cricker/buttons.dart';
 import 'package:cricker/register.dart';
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);

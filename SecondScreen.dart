@@ -1,7 +1,10 @@
+import 'package:cricker/details.dart';
 import 'package:cricker/verification.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
 import 'buttons.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 class SecondScreen extends StatefulWidget {
   @override
@@ -133,7 +136,7 @@ class _SecondScreenState extends State<SecondScreen> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => verification()),
+                    MaterialPageRoute(builder: (context) => details()),
                   );
                 },
               ),

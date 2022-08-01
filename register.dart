@@ -1,6 +1,8 @@
 import 'package:cricker/buttons.dart';
 import 'package:cricker/login.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 class register extends StatefulWidget {
   const register({Key? key}) : super(key: key);

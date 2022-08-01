@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'camera_page.dart';
 import 'login.dart';
 import 'buttons.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 class verification extends StatelessWidget {
   const verification({Key? key}) : super(key: key);
