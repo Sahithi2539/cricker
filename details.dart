@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cricker/display.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'display.dart';
 import 'buttons.dart';
 import 'SecondScreen.dart';
 import 'verification.dart';
@@ -10,7 +12,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:http/http.dart' as http;
 import 'package:intl/intl.dart';
-import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 
 class details extends StatefulWidget {
   details({Key? key}) : super(key: key);
@@ -129,7 +130,10 @@ class _detailsState extends State<details> {
                 );
 
                 createUser(user);
-                Navigator.pop(context);
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => display()),
+                );
               },
             ),
             const SizedBox(height: 32),
@@ -141,6 +145,12 @@ class _detailsState extends State<details> {
         labelText: label,
         border: OutlineInputBorder(),
       );
+
+  // Stream<List<User>> readUsers() => FirebaseFirestore.instance
+  //     .collection('criminals')
+  //     .snapshots()
+  //     .map((snapshot) =>
+  //         snapshot.docs.map((doc) => User.fromJson(doc.data())).toList());
 
   Future createUser(User user) async {
     final docUser = FirebaseFirestore.instance.collection('criminals').doc();
@@ -191,4 +201,15 @@ class User {
         'shift': shift,
         // 'birthday': birthday,
       };
+
+  static User fromJson(Map<String, dynamic> json) => User(
+        id: json['id'],
+        criminalid: json['criminalid'],
+        name: json['name'],
+        age: json['age'],
+        district: json['district'],
+        address: json['address'],
+        category: json['category'],
+        shift: json['shift'],
+      );
 }
