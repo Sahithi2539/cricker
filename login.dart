@@ -1,5 +1,6 @@
 import 'package:cricker/buttons.dart';
 import 'package:cricker/register.dart';
+import 'package:cricker/resetpassword.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/material.dart';
@@ -120,7 +121,13 @@ class _loginState extends State<login> {
                                 style: ButtonStyle(),
                               ),
                               TextButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => reset()),
+                                    );
+                                  },
                                   child: Text(
                                     'Forgot Password ?',
                                     style: TextStyle(

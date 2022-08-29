@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cricker/read%20data/get_user_name.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -59,8 +60,12 @@ class _displayState extends State<display> {
                     return ListView.builder(
                       itemCount: docIDs.length,
                       itemBuilder: (context, index) {
-                        return ListTile(
-                          title: Text(docIDs[index]),
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: ListTile(
+                            title: GetUserName(documentId: docIDs[index]),
+                            tileColor: Colors.grey[200],
+                          ),
                         );
                       },
                     );
